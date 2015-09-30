@@ -15,7 +15,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Users',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -43,6 +43,13 @@ $config = [
             'showScriptName'=>false,
 
         ],
+
+
+        'security' => [
+            'passwordHashStrategy' => 'password_hash'
+        ],
+
+
     ],
     'params' => $params,
 

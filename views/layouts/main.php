@@ -33,31 +33,43 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
+
+    $menuItem = [
+
+        ['label' => 'Главная', 'url' => ['/site/index']],
+
+    ];
+
+  if (Yii::$app->user->isGuest):
+    $menuItem[] =  ['label' => 'Регистрация', 'url' => ['/users/index']];
+    $menuItem[] = ['label' => 'Войти', 'url' => ['/site/login']];
+
+  else:
+    $menuItem[] =
+        ['label' => 'Справочники',
+            'items' => [
+                ['label' => 'Департаменты', 'url' => ['/depart/index']],
+                ['label' => 'Сотрудкики', 'url' => ['/userdata/index']],
+                ['label' => 'Направление', 'url' => ['/direction/index']],
+                ['label' => 'Клиенты', 'url' => ['/client/index']],
+                ['label' => 'Проекты', 'url' => ['/project/index']],
+                ['label' => 'Пользователи', 'url' => ['/users/index']]
+            ],
+        ];
+
+    $menuItem[] = [
+        'label' => 'Выйти (' . Yii::$app->user->identity->username . ')',
+        'url' => ['/site/logout'],
+       'linkOptions' => ['data-method' => 'post']
+        ];
+  endif;
+
+
+
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Справочники',
-                'items' => [
-                    ['label' => 'Департаменты', 'url' => ['/depart/index']],
-                    ['label' => 'Сотрудкики', 'url' => ['/userdata/index']],
-                    ['label' => 'Направление', 'url' => ['/direction/index']],
-                    ['label' => 'Клиенты', 'url' => ['/client/index']],
-                    ['label' => 'Проекты', 'url' => ['/project/index']]
-                ],
-
-
-
-                ],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ?
-                ['label' => 'Войти', 'url' => ['/site/login']] :
-                [
-                    'label' => 'Выйти (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ],
-        ],
+        'items' => $menuItem,
     ]);
     NavBar::end();
     ?>

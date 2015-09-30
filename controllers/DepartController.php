@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * DepartController implements the CRUD actions for Depart model.
  */
-class DepartController extends Controller
+class DepartController extends BehaviorsController
 {
     public function behaviors()
     {
