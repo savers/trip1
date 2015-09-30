@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Userdata;
+use app\models\Depart;
 use app\models\UserdataSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -62,11 +63,18 @@ class UserdataController extends Controller
     {
         $model = new Userdata();
 
+        $depart1 = [
+            ['id' => '123', 'name_depart' => 'aaa'],
+            ['id' => '124', 'name_depart' => 'bbb'],
+            ['id' => '125', 'name_depart' => 'ccc']
+            ];
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'depart' => Depart::find()->all()
             ]);
         }
     }
@@ -86,6 +94,7 @@ class UserdataController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'depart' => Depart::find()->all()
             ]);
         }
     }

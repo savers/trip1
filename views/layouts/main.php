@@ -40,7 +40,10 @@ AppAsset::register($this);
             ['label' => 'Справочники',
                 'items' => [
                     ['label' => 'Департаменты', 'url' => ['/depart/index']],
-                    ['label' => 'Сотрудкики', 'url' => ['/userdata/index']]
+                    ['label' => 'Сотрудкики', 'url' => ['/userdata/index']],
+                    ['label' => 'Направление', 'url' => ['/direction/index']],
+                    ['label' => 'Клиенты', 'url' => ['/client/index']],
+                    ['label' => 'Проекты', 'url' => ['/project/index']]
                 ],
 
 

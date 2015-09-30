@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\UserData */
 
-$this->title = 'Create User Data';
+
 $this->params['breadcrumbs'][] = ['label' => 'User Datas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'depart' => $depart,
     ]) ?>
 
 </div>

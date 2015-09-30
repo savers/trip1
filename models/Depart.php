@@ -47,8 +47,8 @@ class Depart extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUserDatas()
+    public function getUserdatas()
     {
-        return $this->hasMany(UserData::className(), ['id_depart' => 'id']);
+        return $this->hasMany(Userdata::className(), ['id_depart' => 'id']);
     }
 }

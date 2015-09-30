@@ -47,7 +47,10 @@ class UserdataSearch extends Userdata
             'query' => $query,
         ]);
 
+        $dataProvider->pagination->pageSize=10;
+
         $this->load($params);
+
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
@@ -59,7 +62,7 @@ class UserdataSearch extends Userdata
             'id' => $this->id,
             'id_depart' => $this->id_depart,
             'status' => $this->status,
-        ]);
+                   ]);
 
         $query->andFilterWhere(['like', 'pib', $this->pib])
             ->andFilterWhere(['like', 'position', $this->position])

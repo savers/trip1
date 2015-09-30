@@ -44,12 +44,14 @@ class Userdata extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'id_depart' => 'Id Depart',
-            'pib' => 'Pib',
-            'position' => 'Position',
-            'pasport' => 'Pasport',
-            'status' => 'Status',
+            'id' => 'ID Сотрудника',
+            'id_depart' => 'Id Департамента',
+            'pib' => 'Ф И О',
+            'position' => 'Должность',
+            'pasport' => 'Паспорт',
+            'status' => 'Статус',
+
+
         ];
     }
 
@@ -60,4 +62,7 @@ class Userdata extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Depart::className(), ['id' => 'id_depart']);
     }
+
+
+
 }
