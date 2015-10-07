@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <p>&nbsp;</p>
 
 
-                     
+
 
 
                             <p>Підстава:  наказ від<b> <?=
@@ -140,31 +140,35 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399">&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_otpr, 'd MMMM yyyy') ?></b></td>
                                 </tr>
                                 <tr>
                                     <td width="399">
-                                        <p><font size="1">Ì.Ï.</font>______________________________________</p>
+                                        <p><font size="1">М.П.</font>______________________________________</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="399" align="center">
-                                        <p><font size="1">(ï³äïèñ)</font></p>
+                                        <p><font size="1">(підпис)</font></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="399">
-                                        <p>Âèáóâ ç &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ì. </b></p>
+                                        <br>
+                                        <p>Вибув з  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м.<?= Html::encode($model->client1->directions->sity) ?></b></p>
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_otpr1, 'd MMMM yyyy') ?></b></td>
+                                </tr>
+                                <tr>
                                     <td width="399">
-                                        <p><font size="1">Ì.Ï.</font>______________________________________</p>
+                                        <p><font size="1">М.П.</font>______________________________________</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="399" align="center">
-                                        <p><font size="1">(ï³äïèñ)</font></p>
+                                        <p><font size="1">(підпис)</font></p>
                                     </td>
                                 </tr>
                             </table>
@@ -173,35 +177,39 @@ $this->params['breadcrumbs'][] = $this->title;
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td width="399">
-                                        <p>Ïðèáóâ äî&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ì. </b></p>
+                                        <p>Прибув до  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м.<?= Html::encode($model->client1->directions->sity) ?></b></p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399">&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_pr, 'd MMMM yyyy') ?></b></td>
                                 </tr>
                                 <tr>
                                     <td width="399">
-                                        <p><font size="1">Ì.Ï.</font>______________________________________</p>
+                                        <p><font size="1">М.П.</font>______________________________________</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="399" align="center">
-                                        <p><font size="1">(ï³äïèñ)</font></p>
+                                        <p><font size="1">(підпис)</font></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="399">
-                                        <p>Прибув до &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. Харків</b></p>
+                                        <br>
+                                        <p>Прибув до  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. Харків</b>></p>
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_pr1, 'd MMMM yyyy') ?></b></td>
+                                </tr>
+                                <tr>
                                     <td width="399">
-                                        <p><font size="1">Ì.Ï.</font>______________________________________</p>
+                                        <p><font size="1">М.П.</font>______________________________________</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="399" align="center">
-                                        <p><font size="1">(ï³äïèñ)</font></p>
+                                        <p><font size="1">(підпис)</font></p>
                                     </td>
                                 </tr>
                             </table>
