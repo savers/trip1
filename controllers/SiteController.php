@@ -10,6 +10,16 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Users;
 
+
+use app\models\Direction;
+use app\models\Project;
+use app\models\Userdata;
+use app\models\Trip;
+use app\models\TripSearch;
+use yii\web\NotFoundHttpException;
+
+
+
 class SiteController extends BehaviorsController
 {
 
@@ -28,7 +38,13 @@ class SiteController extends BehaviorsController
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new TripSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionLogin()

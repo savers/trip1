@@ -44,6 +44,11 @@ use yii\behaviors\TimestampBehavior;
  */
 class Trip extends \yii\db\ActiveRecord
 {
+
+    public $test;
+    public $test1;
+    public $ssilka;
+
     /**
      * @inheritdoc
      */
@@ -58,7 +63,7 @@ class Trip extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'date_zvit', 'key', 'zhurnal','date_kup_bilet' ], 'required'],
+            [['idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'date_zvit', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
             [['iduserdata', 'idclient', 'idproject', 'idusers', 'status_trip', 'numbertrip', 'budzhet',  'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
             [['target', 'vidtransport', 'note'], 'string', 'max' => 255]
@@ -72,31 +77,34 @@ class Trip extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'iduserdata' => 'Iduserdata',
-            'idclient' => 'Idclient',
-            'idproject' => 'Idproject',
-            'idusers' => 'Idusers',
-            'date_kup_bilet' => 'Date Kup Bilet',
-            'date_otpr' => 'Date Otpr',
-            'date_pr' => 'Date Pr',
-            'date_otpr1' => 'Date Otpr1',
-            'date_pr1' => 'Date Pr1',
-            'status_trip' => 'Status Trip',
-            'numbertrip' => 'Numbertrip',
-            'target' => 'Target',
-            'daily' => 'Daily',
-            'vidtransport' => 'Vidtransport',
-            'cena_pr' => 'Cena Pr',
-            'event' => 'Event',
-            'taxi' => 'Taxi',
-            'predstav' => 'Predstav',
-            'budzhet' => 'Budzhet',
-            'date_zvit' => 'Date Zvit',
-            'key' => 'Key',
-            'zhurnal' => 'Zhurnal',
-            'note' => 'Note',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'iduserdata' => 'Фамилия Имя Отчество',
+            'idclient' => 'Клиент',
+            'idproject' => 'Проект',
+            'idusers' => 'Регистратор',
+            'date_kup_bilet' => 'Дата покупки билетов',
+            'date_otpr' => 'Дата отправления в пункт назначения',
+            'date_pr' => 'Дата прибытия в пункт назначения',
+            'date_otpr1' => 'Дата отправления из пункта назначения',
+            'date_pr1' => 'Дата прибытия назад',
+            'status_trip' => 'Официальная командировка или нет',
+            'numbertrip' => 'Номер командировки',
+            'target' => 'Цель поездки / номер договора',
+            'daily' => 'Суточные',
+            'vidtransport' => 'Вид транспорта',
+            'cena_pr' => 'Стоимость проезда в обе стороны',
+            'event' => 'Цена участия',
+            'taxi' => 'Такси',
+            'predstav' => 'Представительские',
+            'budzhet' => 'Привязка к бюджету по маркетингу',
+            'date_zvit' => 'Дата подачи отчета в бухгалтерию',
+            'key' => 'Необходимость ключа',
+            'zhurnal' => 'Внесение в журнал командировок',
+            'note' => 'Примечание',
+            'created_at' => 'Создано',
+            'updated_at' => 'Обновлено',
+            'test'=>'Направление',
+            'idpr'=>'Номер приказа'
+
         ];
     }
 
@@ -131,10 +139,12 @@ class Trip extends \yii\db\ActiveRecord
     }
 
 
+
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdclient0()
+    public function getClient1()
     {
         return $this->hasOne(Client::className(), ['id' => 'idclient']);
     }
@@ -142,7 +152,7 @@ class Trip extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdproject0()
+    public function getProject1()
     {
         return $this->hasOne(Project::className(), ['id' => 'idproject']);
     }
@@ -150,7 +160,7 @@ class Trip extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIduserdata0()
+    public function getUserdata1()
     {
         return $this->hasOne(Userdata::className(), ['id' => 'iduserdata']);
     }
@@ -158,8 +168,14 @@ class Trip extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdusers0()
+    public function getUsers1()
     {
         return $this->hasOne(Users::className(), ['id' => 'idusers']);
     }
+
+    public function getPrikaz1()
+    {
+        return $this->hasOne(Prikaz::className(), ['id' => 'idpr']);
+    }
+
 }

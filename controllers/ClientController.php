@@ -106,6 +106,40 @@ class ClientController extends BehaviorsController
         return $this->redirect(['index']);
     }
 
+
+
+
+    public function actionLists($id)
+    {
+
+
+        $countPosts = Client::find()
+            ->where(['iddirection' => $id])
+            ->count();
+
+        $posts = \app\models\Client::find()
+            ->where(['iddirection' => $id])
+            ->orderBy('id DESC')
+            ->all();
+
+        if($countPosts>0){
+            foreach($posts as $post){
+                echo "<option value='".$post->id."'>".$post->nameclient."</option>";
+
+            }
+
+        }
+        else{
+            echo "<option>-</option>";
+        }
+
+    }
+
+
+
+
+
+
     /**
      * Finds the Client model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

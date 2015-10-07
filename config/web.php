@@ -6,6 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'sourceLanguage' => 'ru-RU',
     'language' => 'ru-RU',
     'components' => [
         'request' => [
@@ -56,6 +57,8 @@ $config = [
             'dateFormat' => 'php:d-m-Y',
             'datetimeFormat' => 'php:d-m-Y H:i',
             'timeFormat' => 'php:H:i',
+            'defaultTimeZone' => 'Europe/Moscow',
+            'locale' => 'ru-RU'
         ]
 
 

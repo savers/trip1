@@ -3,10 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Trip */
 
-$this->title = $model->id;
+
 $this->params['breadcrumbs'][] = ['label' => 'Trips', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы действительно хотите удалить?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,16 +30,35 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'iduserdata',
-            'idclient',
-            'idproject',
-            'idusers',
-            'date_kup_bilet',
-            'date_otpr',
-            'date_pr',
-            'date_otpr1',
-            'date_pr1',
-            'status_trip',
+            [
+                'attribute'=>'iduserdata',
+                'value' => $model->userdata1->pib
+            ],
+            [
+                'attribute'=>'idclient',
+                'value' => $model->client1->nameclient
+            ],
+            [
+                'attribute'=>'idproject',
+                'value' => $model->project1->name_project
+            ],
+            [
+                'attribute'=>'idusers',
+                'value' => $model->users1->username
+            ],
+
+            'date_kup_bilet:datetime',
+            'date_otpr:datetime',
+            'date_pr:datetime',
+            'date_otpr1:datetime',
+            'date_pr1:datetime',
+
+            [
+                'attribute'=>'status_trip',
+                'value' => $model->status_trip == 1 ? 'Официальная' : 'Неофициальная'
+
+            ],
+
             'numbertrip',
             'target',
             'daily',
@@ -47,13 +67,34 @@ $this->params['breadcrumbs'][] = $this->title;
             'event',
             'taxi',
             'predstav',
-            'budzhet',
-            'date_zvit',
-            'key',
-            'zhurnal',
+
+            [
+                'attribute'=>'budzhet',
+                'value' => $model->budzhet == 1 ? 'Относится' : 'Неотносится'
+
+            ],
+
+            'date_zvit:datetime',
+
+            [
+                'attribute'=>'key',
+                'value' => $model->key == 1 ? 'Нужен' : 'Ненужен'
+
+            ],
+            [
+                'attribute'=>'zhurnal',
+                'value' => $model->zhurnal == 1 ? 'Внесено' : 'Невнесено'
+
+            ],
+
+            [
+                'attribute'=>'idpr',
+                'value' => $model->prikaz1->nomberprikaz
+            ],
+
             'note',
-            'created_at',
-            'updated_at',
+            'created_at:datetime',
+            'updated_at:datetime',
         ],
     ]) ?>
 

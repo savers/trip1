@@ -1,53 +1,169 @@
 <?php
 
+use yii\helpers\Html;
+#use yii\grid\GridView;
+use app\models\Trip;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
+
+use kartik\grid\GridView;
+
 /* @var $this yii\web\View */
+/* @var $searchModel app\models\TripSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'My Yii Application';
+
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-index">
+<div class="trip-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
 
-    <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            [
+                'attribute'=>'numbertrip',
+                'label'=>'№ Командировки',
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+            ],
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
+            [
+                'attribute'=>'iduserdata',
+                'label'=>'Фамилия Имя Отчество',
 
-    </div>
+                'value'=> function($data)
+                {
+                    return $data->userdata1->pib;
+                }
+            ],
+
+            [
+                'attribute'=>'test1',
+                'label'=>'Должность',
+
+                'value'=> function($data)
+                {
+                    return $data->userdata1->position;
+                }
+            ],
+
+
+            [
+                'attribute'=>'test',
+
+                'value'=> function($data)
+                {
+                    return $data->client1->directions->sity;
+                }
+            ],
+
+
+
+
+            [
+                'attribute'=>'idclient',
+                'label'=>'Предприятие для командировки ',
+                'headerOptions' => ['width' => '380'],
+                'filter'=>ArrayHelper::map(\app\models\Client::find()->orderBy('nameclient')->asArray()->all(), 'id', 'nameclient'),
+                'width'=>'150px',
+                'value'=> function($data)
+                {
+                    return $data->client1->nameclient;
+                }
+            ],
+
+
+            'target',
+
+
+
+           // 'date_kup_bilet:datetime',
+
+            [
+                'attribute'=>'date_otpr',
+                'label' => 'Дата отправления',
+                'format' => 'datetime',
+
+            ],
+            [
+                'attribute'=>'date_pr',
+                'label' => 'Дата прибытия.',
+                'format' => 'datetime',
+
+            ],
+
+            [
+                'attribute'=>'date_otpr1',
+                'label' => 'Дата отправления',
+                'format' => 'datetime',
+
+            ],
+            [
+                'attribute'=>'date_pr1',
+                'label' => 'Дата прибытия.',
+                'format' => 'datetime',
+
+            ],
+
+
+            [
+                'attribute'=>'idpr',
+                'label'=>'Номер Приказа ',
+                'value'=> function($data)
+                {
+                    return $data->prikaz1->nomberprikaz;
+                }
+            ],
+
+
+
+            // 'budzhet',
+            // 'zhurnal',
+            // 'note',
+            // 'created_at',
+            // 'updated_at',
+
+            [
+                'attribute'=>'ssilka',
+                'label'=>'Ссылка ',
+                'format' => 'raw',
+                'value'=>function ($data) {
+                    return Html::a(Html::encode('Командировка'), Url::to(['trip/komand', 'id' => $data->id ]),array('target' => '_blank'));
+
+                },
+            ],
+
+
+
+
+
+
+
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'controller' => 'trip'
+            ],
+
+
+
+
+        ],
+    ]);
+
+
+
+
+    ?>
+
 </div>

@@ -54,6 +54,7 @@ AppAsset::register($this);
                 ['label' => 'Клиенты', 'url' => ['/client/index']],
                 ['label' => 'Проекты', 'url' => ['/project/index']],
                 ['label' => 'Пользователи', 'url' => ['/users/index']],
+                ['label' => 'Приказы', 'url' => ['/prikaz/index']],
                 ['label' => 'Командировки', 'url' => ['/trip/index']],
             ],
         ];

@@ -2,24 +2,17 @@
 
 namespace app\controllers;
 
-use app\models\Direction;
-use app\models\Project;
-use app\models\Userdata;
 use Yii;
-use app\models\Trip;
 use app\models\Prikaz;
-use app\models\TripSearch;
+use app\models\PrikazSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\Client;
-use yii\helpers\Json;
-
 
 /**
- * TripController implements the CRUD actions for Trip model.
+ * PrikazController implements the CRUD actions for Prikaz model.
  */
-class TripController extends Controller
+class PrikazController extends Controller
 {
     public function behaviors()
     {
@@ -34,12 +27,12 @@ class TripController extends Controller
     }
 
     /**
-     * Lists all Trip models.
+     * Lists all Prikaz models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TripSearch();
+        $searchModel = new PrikazSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -49,7 +42,7 @@ class TripController extends Controller
     }
 
     /**
-     * Displays a single Trip model.
+     * Displays a single Prikaz model.
      * @param integer $id
      * @return mixed
      */
@@ -60,50 +53,26 @@ class TripController extends Controller
         ]);
     }
 
-
-    public function actionKomand($id)
-    {
-        $this->layout = false;
-        return $this->render('komand', [
-            'model' => $this->findModel($id),
-        ]);
-
-    }
-
-
-
-
     /**
-     * Creates a new Trip model.
+     * Creates a new Prikaz model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Trip();
+        $model = new Prikaz();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'userdata'=> Userdata::find()->all(),
-                'direction'=> Direction::find()->asArray()->all(),
-                'project'=> Project::find()->asArray()->all(),
-                'prikaz'=> Prikaz::find()->asArray()->all(),
-
-
-
             ]);
         }
     }
 
-
-
-
-
     /**
-     * Updates an existing Trip model.
+     * Updates an existing Prikaz model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -117,17 +86,12 @@ class TripController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'userdata'=> Userdata::find()->all(),
-                'direction'=> Direction::find()->asArray()->all(),
-                'project'=> Project::find()->asArray()->all(),
-                'prikaz'=> Prikaz::find()->asArray()->all(),
-
             ]);
         }
     }
 
     /**
-     * Deletes an existing Trip model.
+     * Deletes an existing Prikaz model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -140,15 +104,15 @@ class TripController extends Controller
     }
 
     /**
-     * Finds the Trip model based on its primary key value.
+     * Finds the Prikaz model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Trip the loaded model
+     * @return Prikaz the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Trip::findOne($id)) !== null) {
+        if (($model = Prikaz::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

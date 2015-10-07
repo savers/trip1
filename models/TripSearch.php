@@ -46,6 +46,7 @@ class TripSearch extends Trip
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['numbertrip'=>SORT_DESC]]
         ]);
 
         $this->load($params);
