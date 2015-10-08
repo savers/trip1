@@ -63,7 +63,7 @@ class Trip extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'date_zvit', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
+            [['idotpr','idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'date_zvit', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
             [['iduserdata', 'idclient', 'idproject', 'idusers', 'status_trip', 'numbertrip', 'budzhet',  'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
             [['target', 'vidtransport', 'note'], 'string', 'max' => 255]
@@ -103,7 +103,8 @@ class Trip extends \yii\db\ActiveRecord
             'created_at' => 'Создано',
             'updated_at' => 'Обновлено',
             'test'=>'Направление',
-            'idpr'=>'Номер приказа'
+            'idpr'=>'Номер приказа',
+            'idotpr'=>'Город отправления',
 
         ];
     }

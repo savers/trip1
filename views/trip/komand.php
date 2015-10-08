@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Direction;
 
 
 /* @var $this yii\web\View */
@@ -129,6 +130,12 @@ $this->params['breadcrumbs'][] = $this->title;
             </td>
         </tr>
         <tr>
+
+            <?php
+            $model1 = Direction::findOne($model->idotpr);
+            ?>
+
+
             <td width="836" height="220" colspan="2">
                 <table cellpadding="0" cellspacing="0" height="181">
                     <tr>
@@ -136,7 +143,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td width="399">
-                                        <p>Вибув з  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. Харків</b></p>
+                                        <p>Вибув з  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. <?= Html::encode($model1->sity) ?></b></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -155,7 +162,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <tr>
                                     <td width="399">
                                         <br>
-                                        <p>Вибув з  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м.<?= Html::encode($model->client1->directions->sity) ?></b></p>
+
+
+
+
+                                        <p>Вибув з  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. <?= Html::encode($model->client1->directions->sity) ?></b></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -177,7 +188,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td width="399">
-                                        <p>Прибув до  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м.<?= Html::encode($model->client1->directions->sity) ?></b></p>
+                                        <p>Прибув до  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. <?= Html::encode($model->client1->directions->sity) ?></b></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -196,7 +207,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <tr>
                                     <td width="399">
                                         <br>
-                                        <p>Прибув до  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. Харків</b>></p>
+                                        <p>Прибув до  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>м. <?= Html::encode($model1->sity) ?></b></p>
                                     </td>
                                 </tr>
                                 <tr>

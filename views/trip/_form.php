@@ -169,6 +169,13 @@ use app\models\Client;
     ) ?>
 
 
+    <?= $form->field($model, 'idotpr')->dropDownList(
+        ArrayHelper::map($direction, 'id', 'sity'),
+        ['prompt'=>'Выберите город отправления']
+    ) ?>
+
+
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
