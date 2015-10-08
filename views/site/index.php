@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 use kartik\grid\GridView;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TripSearch */
@@ -21,10 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
+    <?php  $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
 
 
@@ -155,15 +153,30 @@ $this->params['breadcrumbs'][] = $this->title;
                 'controller' => 'trip'
             ],
 
+    ];
+    ?>
 
 
+    <?php  echo ExportMenu::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' =>  $gridColumns,
 
-        ],
+    ]);
+
+    echo  GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' =>  $gridColumns,
+
     ]);
 
 
-
-
     ?>
+
+
+
+
+
 
 </div>

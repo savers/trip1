@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use app\models\Trip;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+use kartik\export\ExportMenu;
 
 use kartik\grid\GridView;
 
@@ -24,10 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить командировку', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
+
+
+    <?php     $gridColumns = [
+
+
+
             ['class' => 'yii\grid\SerialColumn'],
 
 
@@ -91,7 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
 
-           // 'date_kup_bilet:datetime',
+            // 'date_kup_bilet:datetime',
 
             [
                 'attribute'=>'date_otpr',
@@ -130,7 +133,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $interval = $datetime1->diff($datetime2);
                     $interval =$interval->format('%R%a');
                     $interval =$interval+1;
-                     return $interval;
+                    return $interval;
 
 
 
@@ -152,13 +155,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-                 $datetime1 = new DateTime(date('Y-m-d', $data->date_otpr));
-                 $datetime2 = new DateTime(date('Y-m-d', $data->date_pr1));
-                 $interval = $datetime1->diff($datetime2);
-                 $interval = $interval->format('%R%a');
-                 $interval = ($interval + 1)*($data->daily);
-                 return $interval;
-                 }
+                    $datetime1 = new DateTime(date('Y-m-d', $data->date_otpr));
+                    $datetime2 = new DateTime(date('Y-m-d', $data->date_pr1));
+                    $interval = $datetime1->diff($datetime2);
+                    $interval = $interval->format('%R%a');
+                    $interval = ($interval + 1)*($data->daily);
+                    return $interval;
+                }
             ],
 
             [
@@ -217,10 +220,29 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-        ],
+
+
+    ];?>
+
+
+
+
+
+
+
+    <?php  echo ExportMenu::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' =>  $gridColumns,
+
     ]);
 
+         echo  GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' =>  $gridColumns,
 
+    ]);
 
 
     ?>
