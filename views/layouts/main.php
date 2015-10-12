@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -36,7 +37,7 @@ AppAsset::register($this);
 
     $menuItem = [
 
-        ['label' => 'Главная', 'url' => ['/site/index']],
+        ['label' => '<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Главная', 'url' => ['/site/index'], 'encode' => false,],
 
     ];
 
@@ -46,16 +47,16 @@ AppAsset::register($this);
 
   else:
     $menuItem[] =
-        ['label' => 'Справочники',
+        ['label' => ' <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Справочники','encode' => false,
             'items' => [
-                ['label' => 'Департаменты', 'url' => ['/depart/index']],
-                ['label' => 'Сотрудкики', 'url' => ['/userdata/index']],
-                ['label' => 'Направление', 'url' => ['/direction/index']],
-                ['label' => 'Клиенты', 'url' => ['/client/index']],
-                ['label' => 'Проекты', 'url' => ['/project/index']],
-                ['label' => 'Пользователи', 'url' => ['/users/index']],
-                ['label' => 'Приказы', 'url' => ['/prikaz/index']],
-                ['label' => 'Командировки', 'url' => ['/trip/index']],
+                ['label' => '<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Департаменты', 'url' => ['/depart/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Сотрудкики', 'url' => ['/userdata/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-road" aria-hidden="true"></span> Направление', 'url' => ['/direction/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> Клиенты', 'url' => ['/client/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Проекты', 'url' => ['/project/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Пользователи', 'url' => ['/users/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Приказы', 'url' => ['/prikaz/index'],'encode' => false,],
+                ['label' => '<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Командировки', 'url' => ['/trip/index'],'encode' => false,],
             ],
         ];
 

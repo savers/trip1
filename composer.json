@@ -22,7 +22,8 @@
         "kartik-v/yii2-widget-datetimepicker": "*",
         "nepster-web/yii2-basis-components": "*",
         "kartik-v/yii2-widgets": "*",
-        "kartik-v/yii2-mpdf": "^1.0"
+        "kartik-v/yii2-mpdf": "^1.0",
+        "kartik-v/yii2-field-range": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

@@ -6,8 +6,9 @@ use app\models\Trip;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use kartik\export\ExportMenu;
-
+use kartik\datetime\DateTimePicker;
 use kartik\grid\GridView;
+use kartik\widgets\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TripSearch */
@@ -97,6 +98,17 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'date_kup_bilet:datetime',
 
             [
+
+             /*  'filter' => DatePicker::widget([
+                    'name' => 'date_otpr',
+                    'type' => DatePicker::TYPE_RANGE,
+                    'name2' => 'to',
+                    'pluginOptions' => [
+                        'autoclose'=>true,
+                    ]
+
+                ]), */
+
                 'attribute'=>'date_otpr',
                 'label' => 'Дата отправления',
                 'format' => 'datetime',

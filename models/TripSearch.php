@@ -18,9 +18,10 @@ class TripSearch extends Trip
     public function rules()
     {
         return [
-            [['id', 'iduserdata', 'idclient', 'idproject', 'idusers', 'date_kup_bilet', 'date_otpr', 'date_pr', 'date_otpr1', 'date_pr1', 'status_trip', 'numbertrip', 'budzhet', 'date_zvit', 'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
+            [['id','date_otpr', 'iduserdata', 'idclient', 'idproject', 'idusers', 'date_kup_bilet', 'date_pr', 'date_otpr1', 'date_pr1', 'status_trip', 'numbertrip', 'budzhet', 'date_zvit', 'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['target', 'vidtransport', 'note'], 'safe'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
+
         ];
     }
 
@@ -56,6 +57,7 @@ class TripSearch extends Trip
             // $query->where('0=1');
             return $dataProvider;
         }
+
 
         $query->andFilterWhere([
             'id' => $this->id,
