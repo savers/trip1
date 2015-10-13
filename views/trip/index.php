@@ -99,15 +99,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
 
-             /*  'filter' => DatePicker::widget([
-                    'name' => 'date_otpr',
-                    'type' => DatePicker::TYPE_RANGE,
-                    'name2' => 'to',
-                    'pluginOptions' => [
-                        'autoclose'=>true,
-                    ]
 
-                ]), */
 
                 'attribute'=>'date_otpr',
                 'label' => 'Дата отправления',

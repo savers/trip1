@@ -8,19 +8,42 @@ use yii\helpers\Url;
 
 use kartik\grid\GridView;
 use kartik\export\ExportMenu;
+use yii\widgets\ActiveForm;
+use kartik\widgets\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TripSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="trip-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+
+
+    <?php    $form = ActiveForm::begin();
+
+    echo DatePicker::widget([
+        'name' => 'from_date',
+        'type' => DatePicker::TYPE_RANGE,
+        'name2' => 'to_date',
+        'pluginOptions' => [
+            'autoclose'=>true,
+        ]
+    ]);
+
+    echo '<br>';
+    echo Html::submitButton('Поиск', ['class' => 'btn btn-primary']);
+
+
+    ActiveForm::end();
+
+    ?>
+
+<br><br>
 
     <?php  $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
@@ -83,8 +106,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
             'target',
-
-
 
            // 'date_kup_bilet:datetime',
 

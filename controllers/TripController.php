@@ -39,8 +39,11 @@ class TripController extends Controller
      */
     public function actionIndex()
     {
+        $poisk1 = 0;
+        $poisk2 = 0;
+
         $searchModel = new TripSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$poisk1,$poisk2);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

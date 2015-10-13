@@ -41,9 +41,10 @@ class TripSearch extends Trip
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$poisk1,$poisk2)
     {
         $query = Trip::find();
+
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,6 +58,8 @@ class TripSearch extends Trip
             // $query->where('0=1');
             return $dataProvider;
         }
+
+
 
 
         $query->andFilterWhere([
@@ -85,9 +88,31 @@ class TripSearch extends Trip
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'target', $this->target])
-            ->andFilterWhere(['like', 'vidtransport', $this->vidtransport])
-            ->andFilterWhere(['like', 'note', $this->note]);
+        if (!$poisk1 and !$poisk2){
+
+            $query->andFilterWhere(['like', 'target', $this->target])
+                ->andFilterWhere(['like', 'vidtransport', $this->vidtransport])
+                ->andFilterWhere(['like', 'note', $this->note]);
+
+        }
+        else
+        {
+
+            $poisk1 = \DateTime::createFromFormat('d.m.Y',$poisk1);
+            $poisk1 = $poisk1->format('U');
+            $poisk2 = \DateTime::createFromFormat('d.m.Y',$poisk2);
+            $poisk2 = $poisk2->format('U');
+
+            $query->andFilterWhere(['like', 'target',$this->target])
+                ->andFilterWhere(['like', 'vidtransport', $this->vidtransport])
+                ->andFilterWhere(['like', 'note', $this->note])
+                ->andFilterWhere(['>=','date_otpr',$poisk1])
+                ->andFilterWhere(['<=','date_otpr',$poisk2]);
+               // ->addFilterWhere(['<','date_otpr', $poisk2]);
+
+
+        }
+
 
         return $dataProvider;
     }

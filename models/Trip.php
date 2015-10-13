@@ -48,6 +48,8 @@ class Trip extends \yii\db\ActiveRecord
     public $test;
     public $test1;
     public $ssilka;
+    public $poisk1;
+    public $poisk2;
 
     /**
      * @inheritdoc
@@ -66,7 +68,7 @@ class Trip extends \yii\db\ActiveRecord
             [['idotpr','idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'date_zvit', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
             [['iduserdata', 'idclient', 'idproject', 'idusers', 'status_trip', 'numbertrip', 'budzhet',  'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
-            [['target', 'vidtransport', 'note'], 'string', 'max' => 255]
+            [['poisk1','target', 'vidtransport', 'note'], 'string', 'max' => 255]
         ];
     }
 

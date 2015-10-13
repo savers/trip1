@@ -37,14 +37,33 @@ class SiteController extends BehaviorsController
     }
 
     public function actionIndex()
-    {
-        $searchModel = new TripSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+    {
+
+
+        $poisk1 = Yii::$app->request->post('from_date');
+        $poisk2 = Yii::$app->request->post('to_date');
+
+
+
+
+
+            $searchModel = new TripSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$poisk1,$poisk2);
+
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+
+            ]);
+
+
+
+
+
+
+
+
     }
 
     public function actionLogin()
