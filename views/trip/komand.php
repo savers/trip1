@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Trips', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-
+<font face="Arial">
 
 
     <table border="0" width="836" height="529" cellpadding="0" cellspacing="0">
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <table border="0" width="630" cellpadding="0" cellspacing="0">
                     <tr>
                         <td width="620" align="center" valign="bottom">
-                            <p>Посвідчення про відрядження № <?= Html::encode($model->prikaz1->nomberprikaz) ?></p>
+                            <p>Посвідчення про відрядження № <?= Html::encode($model->numbertrip) ?></p>
                         </td>
                     </tr>
                     <tr>
@@ -63,13 +63,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
 
                     <tr>
-                        <td width="620" align="center" valign="bottom">
-                            <p><font size="1">(найменування підприємства, установи, організації) </font></p>
+                        <td width="620" align="center" valign="top" height="20">
+                            <font size="1">(найменування підприємства, установи, організації) </font>
                         </td>
                     </tr>
                     <tr>
                         <td width="620" align="left" valign="bottom">
-                            <p>&nbsp;</p>
+
 
                     <?php
 
@@ -91,18 +91,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
 
                     <tr>
-                        <td width="620" align="center" valign="bottom">
+                        <td width="620" align="center" valign="top" height="20">
                             <p><font size="1">(мета відряждення) </font></p>
                         </td>
                     </tr>
 
                     <tr>
-                        <td width="620" align="left" valign="bottom">
-                            <p>&nbsp;</p>
-
-
-
-
+                        <td width="620" align="left" valign="bottom" >
 
                             <p>Підстава:  наказ від<b> <?=
 
@@ -112,19 +107,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                     <tr>
-                        <td width="620" align="left" valign="bottom">
-                            <p>&nbsp;</p>
+                        <td width="620" align="left" valign="bottom" height="30">
+
 
                             <p>Дійсне при пред'явленні паспорта серії<b> <?= $model->userdata1->pasport ?> </b></p>
                         </td>
                     </tr>
 
 
-                    <tr>
-                        <td width="620" align="center" valign="bottom">
-                            <p>&nbsp;</p>
-                        </td>
-                    </tr>
+
                 </table>
                 <p>&nbsp;&nbsp;</p>
             </td>
@@ -138,6 +129,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <td width="836" height="220" colspan="2">
                 <table cellpadding="0" cellspacing="0" height="181">
+                    <tr>
+                        <td width="410" height="50" valign="top">М.П.</td>
+                        <td width="410" height="50" valign="top">Керiвник</td>
+                    </tr>
+
+
+
                     <tr>
                         <td width="410" height="175">
                             <table border="0" cellpadding="0" cellspacing="0">
@@ -232,3 +230,4 @@ $this->params['breadcrumbs'][] = $this->title;
     </table>
 
 
+</font>

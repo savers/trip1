@@ -19,7 +19,7 @@ class TripSearch extends Trip
     {
         return [
             [['id','date_otpr', 'iduserdata', 'idclient', 'idproject', 'idusers', 'date_kup_bilet', 'date_pr', 'date_otpr1', 'date_pr1', 'status_trip', 'numbertrip', 'budzhet', 'date_zvit', 'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
-            [['target', 'vidtransport', 'note'], 'safe'],
+            [['target', 'vidtransport', 'note','depart'], 'safe'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
 
         ];
@@ -43,7 +43,7 @@ class TripSearch extends Trip
      */
     public function search($params,$poisk1,$poisk2)
     {
-        $query = Trip::find();
+        $query = Trip::find()->innerJoin('userdata','userdata.id=trip.iduserdata');
 
 
         $dataProvider = new ActiveDataProvider([
@@ -86,6 +86,8 @@ class TripSearch extends Trip
             'zhurnal' => $this->zhurnal,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'userdata.id_depart'=>$this->depart,
+
         ]);
 
         if (!$poisk1 and !$poisk2){

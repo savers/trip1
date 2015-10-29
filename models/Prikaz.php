@@ -27,11 +27,12 @@ class Prikaz extends \yii\db\ActiveRecord
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-            if ($this->isNewRecord) {
+
 
                $this->dateprikaz = \DateTime::createFromFormat('Y-m-d H:i',$this->dateprikaz)->format('U');
 
-            }
+
+
             return true;
         }
         return false;

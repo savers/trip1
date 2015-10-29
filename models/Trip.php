@@ -50,6 +50,7 @@ class Trip extends \yii\db\ActiveRecord
     public $ssilka;
     public $poisk1;
     public $poisk2;
+    public $depart;
 
     /**
      * @inheritdoc
@@ -107,15 +108,19 @@ class Trip extends \yii\db\ActiveRecord
             'test'=>'Направление',
             'idpr'=>'Номер приказа',
             'idotpr'=>'Город отправления',
+            'depart'=>'Департамент',
 
         ];
     }
 
 
+
+
+
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-            if ($this->isNewRecord) {
+
 
                 $this->idusers = Yii::$app->user->id;
 
@@ -128,7 +133,7 @@ class Trip extends \yii\db\ActiveRecord
                 $this->date_zvit = \DateTime::createFromFormat('Y-m-d H:i',$this->date_zvit)->format('U');
 
 
-            }
+
             return true;
         }
         return false;

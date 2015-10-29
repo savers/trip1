@@ -58,6 +58,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
             [
+                'attribute'=>'depart',
+                'filter'=>ArrayHelper::map(\app\models\Depart::find()->orderBy('name_depart')->asArray()->all(), 'id', 'name_depart'),
+                'value'=> function($data)
+               {
+                return $data->userdata1->idDepart->name_depart;
+              }
+             ],
+
+
+            [
                 'attribute'=>'test',
 
                 'value'=> function($data)

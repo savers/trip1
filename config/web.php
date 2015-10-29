@@ -58,7 +58,7 @@ $config = [
             'datetimeFormat' => 'php:d-m-Y H:i',
             'timeFormat' => 'php:H:i',
             'defaultTimeZone' => 'Europe/Moscow',
-            'locale' => 'ru-RU'
+            'locale' => 'uk-UA'
         ]
 
 
