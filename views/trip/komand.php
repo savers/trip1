@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td width="620" align="center" valign="bottom" style="border-bottom-width:1; border-bottom-color:black; border-bottom-style:solid;">
-                            <p>Видан <b><?= Html::encode($model->userdata1->pib) ?></b></p>
+                            <p>Видано <b><?= Html::encode($model->userdata1->pib) ?></b></p>
                         </td>
                     </tr>
                     <tr>
