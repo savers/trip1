@@ -66,9 +66,10 @@ class Trip extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idotpr','idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'date_zvit', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
+            [['idotpr','idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
             [['iduserdata', 'idclient', 'idproject', 'idusers', 'status_trip', 'numbertrip', 'budzhet',  'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
+            ['date_zvit', 'safe'],
             [['poisk1','target', 'vidtransport', 'note'], 'string', 'max' => 255]
         ];
     }
@@ -130,8 +131,11 @@ class Trip extends \yii\db\ActiveRecord
                 $this->date_otpr1 = \DateTime::createFromFormat('Y-m-d H:i',$this->date_otpr1)->format('U');
                 $this->date_pr = \DateTime::createFromFormat('Y-m-d H:i',$this->date_pr)->format('U');
                 $this->date_pr1 = \DateTime::createFromFormat('Y-m-d H:i',$this->date_pr1)->format('U');
-                $this->date_zvit = \DateTime::createFromFormat('Y-m-d H:i',$this->date_zvit)->format('U');
 
+
+            if ($this->date_zvit !== '') {
+                $this->date_zvit = \DateTime::createFromFormat('Y-m-d H:i',$this->date_zvit)->format('U');
+            }
 
 
             return true;

@@ -45,6 +45,7 @@ class ProjectSearch extends Project
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['name_project'=>SORT_ASC]]
         ]);
 
         $this->load($params);

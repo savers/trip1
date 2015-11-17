@@ -45,6 +45,7 @@ class PrikazSearch extends Prikaz
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['nomberprikaz'=>SORT_DESC]]
         ]);
 
         $this->load($params);

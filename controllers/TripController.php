@@ -80,10 +80,10 @@ class TripController extends BehaviorsController
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'userdata'=> Userdata::find()->all(),
-                'direction'=> Direction::find()->asArray()->all(),
-                'project'=> Project::find()->asArray()->all(),
-                'prikaz'=> Prikaz::find()->asArray()->all(),
+                'userdata'=> Userdata::find()->orderBy('pib')->all(),
+                'direction'=> Direction::find()->asArray()->orderBy('sity')->all(),
+                'project'=> Project::find()->asArray()->orderBy('name_project')->all(),
+                'prikaz'=> Prikaz::find()->asArray()->orderBy('nomberprikaz DESC')->all(),
 
 
 

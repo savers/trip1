@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-            ['class' => 'yii\grid\SerialColumn'],
 
+            ['class' => 'yii\grid\ActionColumn'],
 
             [
                 'attribute'=>'numbertrip',
@@ -221,7 +221,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
 
+        [
+            'attribute'=>'date_zvit',
+            'label' => 'Дата подачи отчета',
+            'format' => 'date',
 
+        ],
 
             // 'budzhet',
             // 'zhurnal',
@@ -229,7 +234,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'created_at',
             // 'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+
 
 
 

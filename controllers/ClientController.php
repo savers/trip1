@@ -109,7 +109,7 @@ class ClientController extends BehaviorsController
 
         $posts = \app\models\Client::find()
             ->where(['iddirection' => $id])
-            ->orderBy('id DESC')
+            ->orderBy('nameclient')
             ->all();
 
         if($countPosts>0){

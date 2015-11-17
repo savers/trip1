@@ -46,7 +46,21 @@ use kartik\widgets\DatePicker;
 <br><br>
 
     <?php  $gridColumns = [
-            ['class' => 'yii\grid\SerialColumn'],
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'controller' => 'trip'
+        ],
+
+
+        [
+            'attribute'=>'ssilka',
+            'label'=>'Ссылка ',
+            'format' => 'raw',
+            'value'=>function ($data) {
+                return Html::a(Html::encode('Командировка'), Url::to(['trip/komand', 'id' => $data->id ]),array('target' => '_blank'));
+
+            },
+        ],
 
 
             [
@@ -153,15 +167,6 @@ use kartik\widgets\DatePicker;
             // 'created_at',
             // 'updated_at',
 
-            [
-                'attribute'=>'ssilka',
-                'label'=>'Ссылка ',
-                'format' => 'raw',
-                'value'=>function ($data) {
-                    return Html::a(Html::encode('Командировка'), Url::to(['trip/komand', 'id' => $data->id ]),array('target' => '_blank'));
-
-                },
-            ],
 
 
 
@@ -169,10 +174,8 @@ use kartik\widgets\DatePicker;
 
 
 
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'controller' => 'trip'
-            ],
+
+
 
     ];
     ?>

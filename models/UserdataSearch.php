@@ -45,6 +45,7 @@ class UserdataSearch extends Userdata
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['pib'=>SORT_ASC]]
         ]);
 
         $dataProvider->pagination->pageSize=10;
