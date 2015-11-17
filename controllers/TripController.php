@@ -19,19 +19,9 @@ use yii\helpers\Json;
 /**
  * TripController implements the CRUD actions for Trip model.
  */
-class TripController extends Controller
+class TripController extends BehaviorsController
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all Trip models.

@@ -12,19 +12,9 @@ use yii\filters\VerbFilter;
 /**
  * PrikazController implements the CRUD actions for Prikaz model.
  */
-class PrikazController extends Controller
+class PrikazController extends BehaviorsController
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all Prikaz models.
