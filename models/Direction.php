@@ -40,7 +40,7 @@ class Direction extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'sity' => 'Грод',
+            'sity' => 'Город',
         ];
     }
 

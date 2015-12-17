@@ -63,7 +63,14 @@ class TripController extends BehaviorsController
 
     }
 
+    public function actionKomand1($id)
+    {
+        $this->layout = false;
+        return $this->render('komand1', [
+            'model' => $this->findModel($id),
+        ]);
 
+    }
 
 
     /**
@@ -127,7 +134,21 @@ class TripController extends BehaviorsController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+
+        $model = $this->findModel($id);
+
+        if ($model->idusers == Yii::$app->user->id)
+        {
+            $this->findModel($id)->delete();
+
+
+
+        }
+        else
+        {
+
+            throw new NotFoundHttpException('УДАЛЯТЬ МОЖЕТ ТОЛЬКО РЕГИСТРАТОР ДАННОЙ КОМАНДИРОВКИ');
+        }
 
         return $this->redirect(['index']);
     }

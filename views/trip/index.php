@@ -228,6 +228,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ],
 
+        [
+            'attribute'=>'idusers',
+            'value'=> function($data)
+            {
+                return $data->users1->username;
+            }
+
+        ],
+
             // 'budzhet',
             // 'zhurnal',
             // 'note',

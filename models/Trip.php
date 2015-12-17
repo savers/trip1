@@ -96,7 +96,7 @@ class Trip extends \yii\db\ActiveRecord
             'daily' => 'Суточные',
             'vidtransport' => 'Вид транспорта',
             'cena_pr' => 'Стоимость проезда в обе стороны',
-            'event' => 'Цена участия',
+            'event' => 'Стоимость участия',
             'taxi' => 'Такси',
             'predstav' => 'Представительские',
             'budzhet' => 'Привязка к бюджету по маркетингу',
@@ -149,6 +149,7 @@ class Trip extends \yii\db\ActiveRecord
             TimestampBehavior::className(),
         ];
     }
+
 
 
 

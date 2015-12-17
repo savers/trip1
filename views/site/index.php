@@ -57,8 +57,10 @@ use kartik\widgets\DatePicker;
             'label'=>'Ссылка ',
             'format' => 'raw',
             'value'=>function ($data) {
-                return Html::a(Html::encode('Командировка'), Url::to(['trip/komand', 'id' => $data->id ]),array('target' => '_blank'));
 
+                $val = Html::a(Html::encode('Командировка'), Url::to(['trip/komand', 'id' => $data->id ]),array('target' => '_blank'));
+                $val = $val.'<br>'.Html::a(Html::encode('Бланк'), Url::to(['trip/komand1', 'id' => $data->id ]),array('target' => '_blank'));
+                return $val;
             },
         ],
 
