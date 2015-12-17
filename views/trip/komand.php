@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td width="620" align="center" valign="bottom" style="border-bottom-width:1; border-bottom-color:black; border-bottom-style:solid;">
-                            <p>Відрядженому до <b>м.<?= Html::encode($model->client1->directions->sity) ?>  </b></p>
+                            <p>Відрядженому до <b>м.&nbsp;<?= Html::encode($model->client1->directions->sity) ?>  </b></p>
                         </td>
                     </tr>
                     <tr>

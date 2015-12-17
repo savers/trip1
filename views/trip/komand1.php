@@ -11,6 +11,11 @@ use app\models\Direction;
 
 $this->params['breadcrumbs'][] = ['label' => 'Trips', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$today = new \DateTime();
+$today = $today->getTimestamp();
+$today = date('Y', $today);
+
 ?>
 
 <font face="Arial">
@@ -48,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td width="620" align="center" valign="bottom" style="border-bottom-width:1; border-bottom-color:black; border-bottom-style:solid;">
-                            <p>Відрядженому до <b>м.<?= Html::encode($model->client1->directions->sity) ?>  </b></p>
+                            <p>Відрядженому до <b>м.&nbsp;<?= Html::encode($model->client1->directions->sity) ?>  </b></p>
                         </td>
                     </tr>
                     <tr>
@@ -81,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                       ?>
 
-                            <p>Термін відрядження  " <?= $interval ?>   "   днів</p>
+                            <p>Термін відрядження  " ______ "   днів</p>
                         </td>
                     </tr>
                     <tr>
@@ -145,11 +150,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
-                                        <p><font size="1">М.П.</font>______________________________________</p>
+                                       <p><font size="1">М.П.</font>______________________________________</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -168,7 +173,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -190,7 +195,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -209,7 +214,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">

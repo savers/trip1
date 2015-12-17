@@ -112,17 +112,25 @@ class TripController extends BehaviorsController
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-                'userdata'=> Userdata::find()->all(),
-                'direction'=> Direction::find()->asArray()->all(),
-                'project'=> Project::find()->asArray()->all(),
-                'prikaz'=> Prikaz::find()->asArray()->all(),
 
-            ]);
+        if ($model->idusers == Yii::$app->user->id) {
+
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                    'userdata' => Userdata::find()->all(),
+                    'direction' => Direction::find()->asArray()->all(),
+                    'project' => Project::find()->asArray()->all(),
+                    'prikaz' => Prikaz::find()->asArray()->all(),
+
+                ]);
+            }
+        }
+        else
+        {
+            throw new NotFoundHttpException('РЕДАКТИРОВАТЬ МОЖЕТ ТОЛЬКО РЕГИСТРАТОР ДАННОЙ КОМАНДИРОВКИ');
         }
     }
 
