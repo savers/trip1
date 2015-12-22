@@ -64,7 +64,7 @@ class UserdataController extends BehaviorsController
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'depart' => Depart::find()->all()
+                'depart' => Depart::find()->orderBy('name_depart')->all()
             ]);
         }
     }

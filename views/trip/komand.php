@@ -101,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             <p>Підстава:  наказ від<b> <?=
 
-                                Yii::$app->formatter->asDate($model->prikaz1->dateprikaz, 'd MMMM yyyy') ?>  № <?= $model->prikaz1->nomberprikaz ?> </b></p>
+                                Yii::$app->formatter->asDate($model->prikaz1->dateprikaz, 'd MMMM yyyy') ?> р.  № <?= $model->prikaz1->nomberprikaz ?> </b></p>
                         </td>
                     </tr>
 
@@ -145,7 +145,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_otpr, 'd MMMM yyyy') ?></b></td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_otpr, 'd MMMM yyyy') ?> р.</b></td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -168,7 +168,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_otpr1, 'd MMMM yyyy') ?></b></td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_otpr1, 'd MMMM yyyy') ?> р.</b></td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -190,7 +190,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_pr, 'd MMMM yyyy') ?></b></td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_pr, 'd MMMM yyyy') ?> р.</b></td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -209,7 +209,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_pr1, 'd MMMM yyyy') ?></b></td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><?= Yii::$app->formatter->asDate($model->date_pr1, 'd MMMM yyyy') ?> р.</b></td>
                                 </tr>
                                 <tr>
                                     <td width="399">

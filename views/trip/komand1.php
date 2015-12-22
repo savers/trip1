@@ -106,7 +106,7 @@ $today = date('Y', $today);
 
                             <p>Підстава:  наказ від<b> <?=
 
-                                Yii::$app->formatter->asDate($model->prikaz1->dateprikaz, 'd MMMM yyyy') ?>  № <?= $model->prikaz1->nomberprikaz ?> </b></p>
+                                Yii::$app->formatter->asDate($model->prikaz1->dateprikaz, 'd MMMM yyyy') ?> р.  № <?= $model->prikaz1->nomberprikaz ?> </b></p>
                         </td>
                     </tr>
 
@@ -150,7 +150,7 @@ $today = date('Y', $today);
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?> р.</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -173,7 +173,7 @@ $today = date('Y', $today);
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?> р.</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -195,7 +195,7 @@ $today = date('Y', $today);
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?> р.</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
@@ -214,7 +214,7 @@ $today = date('Y', $today);
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
+                                    <td width="399"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"_____"____________________ <b><?= $today ?> р.</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td width="399">
