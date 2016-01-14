@@ -114,7 +114,7 @@ class ClientController extends BehaviorsController
 
         if($countPosts>0){
             foreach($posts as $post){
-                echo "<option value='".$post->id."'>".$post->nameclient."</option>";
+                echo "<option value='".$post->id."'>".$post->nameclient." -  ".$post->namevid."</option>";
 
             }
 

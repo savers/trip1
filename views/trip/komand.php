@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </tr>
                     <tr>
                         <td width="620" align="center" valign="bottom" style="border-bottom-width:1; border-bottom-color:black; border-bottom-style:solid;">
-                            <p><b><?= Html::encode($model->client1->nameclient) ?></b></p>
+                            <p><b><?= Html::encode($model->client1->namevid) ?><?= Html::encode($model->client1->nameclient) ?></b></p>
                         </td>
                     </tr>
 

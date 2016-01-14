@@ -31,7 +31,8 @@ class Client extends \yii\db\ActiveRecord
         return [
             [['iddirection'], 'integer'],
             [['nameclient'], 'required'],
-            [['nameclient'], 'string', 'max' => 255]
+            [['nameclient'], 'string', 'max' => 255],
+            ['namevid', 'safe'],
         ];
     }
 
@@ -44,6 +45,7 @@ class Client extends \yii\db\ActiveRecord
             'id' => 'ID',
             'iddirection' => 'Направление',
             'nameclient' => 'Наименование клиента',
+            'namevid' => 'Вид деятельности',
         ];
     }
 

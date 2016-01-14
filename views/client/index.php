@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'nameclient',
+            'namevid',
 
             [
                 'attribute'=>'iddirection',
