@@ -53,7 +53,8 @@ use app\models\Client;
     <?=  $form->field($model, 'date_kup_bilet')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
@@ -62,7 +63,8 @@ use app\models\Client;
     <?=  $form->field($model, 'date_otpr')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
@@ -71,7 +73,8 @@ use app\models\Client;
     <?=  $form->field($model, 'date_pr')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
@@ -79,7 +82,8 @@ use app\models\Client;
     <?=  $form->field($model, 'date_otpr1')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
@@ -88,7 +92,8 @@ use app\models\Client;
     <?=  $form->field($model, 'date_pr1')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
@@ -139,7 +144,8 @@ use app\models\Client;
     <?=  $form->field($model, 'date_zvit')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
