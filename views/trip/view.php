@@ -26,6 +26,22 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
+
+<?php
+
+$datetime1 = new DateTime(date('Y-m-d', $model->date_otpr));
+$datetime2 = new DateTime(date('Y-m-d', $model->date_pr1));
+$interval = $datetime1->diff($datetime2);
+$interval = $interval->format('%R%a');
+$interval = ($interval + 1)*($model->daily);
+$interval = $interval+$model->event+$model->taxi+$model->predstav+$model->cena_pr;
+$interval = number_format($interval, 2, ',', ' ');
+
+?>
+
+
+
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -61,12 +77,35 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'numbertrip',
             'target',
-            'daily',
+
+            [
+                'attribute'=>'daily',
+                'format' => ['decimal', 2],
+
+            ],
             'vidtransport',
-            'cena_pr',
-            'event',
-            'taxi',
-            'predstav',
+            [
+                'attribute'=>'cena_pr',
+                'format' => ['decimal', 2],
+
+            ],
+            [
+                'attribute'=>'event',
+                'format' => ['decimal', 2],
+
+            ],
+
+            [
+                'attribute'=>'taxi',
+                'format' => ['decimal', 2],
+
+            ],
+            [
+                'attribute'=>'predstav',
+                'format' => ['decimal', 2],
+
+            ],
+
 
             [
                 'attribute'=>'budzhet',
@@ -92,9 +131,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => $model->prikaz1->nomberprikaz
             ],
 
+
+
             'note',
             'created_at:datetime',
             'updated_at:datetime',
+            [
+                'label'=>'<font color="red">Всего</font>',
+                'format' => 'raw',
+
+                'value' => '<b><font color="red">'.$interval.'</font></b>' ,
+
+            ],
         ],
     ]) ?>
 
