@@ -20,7 +20,8 @@ use yii\helpers\ArrayHelper;
     <?=  $form->field($model, 'dateprikaz')->widget(DateTimePicker::classname(), [
         'options' => ['placeholder' => 'Выберите дату и время ...'],
         'pluginOptions' => [
-            'autoclose' => true
+            'autoclose' => true,
+            'weekStart'=>1
         ]
     ]);
     ?><br>
