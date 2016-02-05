@@ -18,9 +18,9 @@ class TripSearch extends Trip
     public function rules()
     {
         return [
-            [['id','date_otpr', 'iduserdata', 'idclient', 'idproject', 'idusers', 'date_kup_bilet', 'date_pr', 'date_otpr1', 'date_pr1', 'status_trip', 'numbertrip', 'budzhet', 'date_zvit', 'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
+            [['id','date_otpr', 'iduserdata', 'idclient', 'idproject', 'idusers', 'date_kup_bilet', 'date_pr', 'date_otpr1', 'date_pr1', 'status_trip', 'numbertrip', 'budzhet', 'date_zvit', 'date_zvit_us', 'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['target', 'vidtransport', 'note','depart'], 'safe'],
-            [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
+            [['daily', 'cena_pr', 'event', 'taxi', 'predstav','stoimost_pr'], 'number'],
 
         ];
     }
@@ -79,9 +79,11 @@ class TripSearch extends Trip
             'cena_pr' => $this->cena_pr,
             'event' => $this->event,
             'taxi' => $this->taxi,
+            'stoimost_pr' => $this->stoimost_pr,
             'predstav' => $this->predstav,
             'budzhet' => $this->budzhet,
             'date_zvit' => $this->date_zvit,
+            'date_zvit_us' => $this->date_zvit_us,
             'key' => $this->key,
             'zhurnal' => $this->zhurnal,
             'created_at' => $this->created_at,

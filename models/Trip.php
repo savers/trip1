@@ -68,8 +68,8 @@ class Trip extends \yii\db\ActiveRecord
         return [
             [['idotpr','idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
             [['iduserdata', 'idclient', 'idproject', 'idusers', 'status_trip', 'numbertrip', 'budzhet',  'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
-            [['daily', 'cena_pr', 'event', 'taxi', 'predstav'], 'number'],
-            ['date_zvit', 'safe'],
+            [['daily', 'cena_pr', 'event', 'taxi', 'predstav','stoimost_pr'], 'number'],
+            [['date_zvit','date_zvit_us'], 'safe'],
             [['poisk1','target', 'vidtransport', 'note'], 'string', 'max' => 255]
         ];
     }
@@ -110,6 +110,8 @@ class Trip extends \yii\db\ActiveRecord
             'idpr'=>'Номер приказа',
             'idotpr'=>'Город отправления',
             'depart'=>'Департамент',
+            'date_zvit_us'=>'Дата отчета сотрудника',
+            'stoimost_pr'=>'Стоимость проживания',
 
         ];
     }
@@ -137,6 +139,9 @@ class Trip extends \yii\db\ActiveRecord
                 $this->date_zvit = \DateTime::createFromFormat('Y-m-d H:i',$this->date_zvit)->format('U');
             }
 
+            if ($this->date_zvit_us !== '') {
+                $this->date_zvit_us = \DateTime::createFromFormat('Y-m-d H:i',$this->date_zvit_us)->format('U');
+            }
 
             return true;
         }

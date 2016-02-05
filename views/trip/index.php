@@ -184,6 +184,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => ['decimal', 2],
 
             ],
+            [
+            'attribute'=>'stoimost_pr',
+            'label' => 'Стоимость проживания',
+            'format' => ['decimal', 2],
+
+            ],
 
             [
                 'attribute'=>'event',
@@ -215,7 +221,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $interval = $datetime1->diff($datetime2);
                     $interval = $interval->format('%R%a');
                     $interval = ($interval + 1)*($data->daily);
-                    $interval = $interval+$data->event+$data->taxi+$data->predstav+$data->cena_pr;
+                    $interval = $interval+$data->event+$data->taxi+$data->predstav+$data->cena_pr+$data->stoimost_pr;
 
                     return $interval;
                 }
@@ -224,6 +230,12 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'attribute'=>'date_zvit',
             'label' => 'Дата подачи отчета',
+            'format' => 'date',
+
+        ],
+
+        [
+            'attribute'=>'date_zvit_us',
             'format' => 'date',
 
         ],

@@ -34,7 +34,7 @@ $datetime2 = new DateTime(date('Y-m-d', $model->date_pr1));
 $interval = $datetime1->diff($datetime2);
 $interval = $interval->format('%R%a');
 $interval = ($interval + 1)*($model->daily);
-$interval = $interval+$model->event+$model->taxi+$model->predstav+$model->cena_pr;
+$interval = $interval+$model->event+$model->taxi+$model->predstav+$model->cena_pr+$model->stoimost_pr;
 $interval = number_format($interval, 2, ',', ' ');
 
 ?>
@@ -101,6 +101,11 @@ $interval = number_format($interval, 2, ',', ' ');
 
             ],
             [
+                'attribute'=>'stoimost_pr',
+                'format' => ['decimal', 2],
+
+            ],
+            [
                 'attribute'=>'predstav',
                 'format' => ['decimal', 2],
 
@@ -114,6 +119,7 @@ $interval = number_format($interval, 2, ',', ' ');
             ],
 
             'date_zvit:datetime',
+            'date_zvit_us:datetime',
 
             [
                 'attribute'=>'key',

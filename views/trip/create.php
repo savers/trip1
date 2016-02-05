@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
         $model->event =0,
         $model->taxi =0,
         $model->predstav =0,
+        $model->stoimost_pr =0,
 
 
     ]);

@@ -17,6 +17,15 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?php
 
+ $date_zvit_us1 ='';
+    if(isset($model->date_zvit_us)) {
+
+        $date_zvit_us1 = $model->date_zvit_us = date('Y-m-d H:i', $model->date_zvit_us);
+
+    }
+
+
+
     if(isset($model->date_zvit)) {
 
   echo      $this->render('_form', [
@@ -31,6 +40,8 @@ $this->params['breadcrumbs'][] = 'Update';
             'direction' => $direction,
             'project' => $project,
             'prikaz' => $prikaz,
+            $model->date_zvit = $date_zvit_us1,
+
         ]);
 
     }
@@ -48,6 +59,7 @@ $this->params['breadcrumbs'][] = 'Update';
             'direction' => $direction,
             'project' => $project,
             'prikaz' => $prikaz,
+            $model->date_zvit = $date_zvit_us1,
         ]);
 
 

@@ -45,7 +45,7 @@ class Client extends \yii\db\ActiveRecord
             'id' => 'ID',
             'iddirection' => 'Направление',
             'nameclient' => 'Наименование клиента',
-            'namevid' => 'Вид деятельности',
+            'namevid' => 'Форма собственности',
         ];
     }
 

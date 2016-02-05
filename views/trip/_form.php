@@ -129,6 +129,8 @@ use app\models\Client;
 
     <?= $form->field($model, 'taxi')->textInput() ?>
 
+    <?= $form->field($model, 'stoimost_pr')->textInput() ?>
+
     <?= $form->field($model, 'predstav')->textInput() ?>
 
 
@@ -149,6 +151,17 @@ use app\models\Client;
         ]
     ]);
     ?><br>
+
+
+    <?=  $form->field($model, 'date_zvit_us')->widget(DateTimePicker::classname(), [
+        'options' => ['placeholder' => 'Выберите дату и время ...'],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'weekStart'=>1
+        ]
+    ]);
+    ?><br>
+
 
     <?= $form->field($model, 'key')->dropDownList(
         [
