@@ -25,7 +25,13 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'pasport')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList(
+        [
+            '1' => 'Активировать',
+            '0' => 'Деактивировать',
+
+        ]
+    ) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Изменить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
