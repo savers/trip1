@@ -7,8 +7,8 @@ class m160205_093933_create_column_date_zvit_us extends Migration
 {
     public function safeUp()
     {
-        $this->alterColumn('trip', 'date_zvit_us','integer NULL');
-        $this->alterColumn('trip', 'stoimost_pr','float NULL');
+     //   $this->alterColumn('trip', 'date_zvit_us','integer NULL');
+     //   $this->alterColumn('trip', 'stoimost_pr','float NULL');
 
     }
 

@@ -8,7 +8,7 @@ class m160112_090233_create_column_vid extends Migration
     public function up()
     {
 
-        $this->addColumn('client', 'namevid','string NULL');
+     //   $this->addColumn('client', 'namevid','string NULL');
 
     }
 
