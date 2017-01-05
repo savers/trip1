@@ -69,7 +69,7 @@ class Trip extends \yii\db\ActiveRecord
             [['idotpr','idpr','iduserdata','date_otpr','date_otpr1','date_pr','date_pr1', 'idclient', 'idproject',   'status_trip', 'numbertrip', 'target', 'daily', 'vidtransport', 'cena_pr', 'event', 'taxi', 'predstav', 'budzhet', 'key', 'zhurnal','date_kup_bilet'  ], 'required'],
             [['iduserdata', 'idclient', 'idproject', 'idusers', 'status_trip', 'numbertrip', 'budzhet',  'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['daily', 'cena_pr', 'event', 'taxi', 'predstav','stoimost_pr'], 'number'],
-            [['date_zvit','date_zvit_us'], 'safe'],
+            [['date_zvit','date_zvit_us','dt'], 'safe'],
             [['poisk1','target', 'vidtransport', 'note'], 'string', 'max' => 255]
         ];
     }
@@ -124,6 +124,16 @@ class Trip extends \yii\db\ActiveRecord
     {
         if (parent::beforeSave($insert)) {
 
+
+
+            if($this->isNewRecord) {
+
+
+                $dat = new \DateTime();
+                $sat = $dat->format('Y');
+                $this->dt = $sat;
+
+            }
 
                 $this->idusers = Yii::$app->user->id;
 

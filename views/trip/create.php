@@ -8,8 +8,12 @@ use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $model app\models\Trip */
 
+$dat = new \DateTime();
+$sat = $dat->format('Y');
 
-$sql = 'SELECT numbertrip FROM trip ORDER BY numbertrip DESC limit 1 ';
+
+
+$sql = "SELECT numbertrip FROM trip where dt = '$sat' ORDER BY  numbertrip DESC limit 1 ";
 $result = Yii::$app->db->createCommand($sql)->queryOne();
 $value = ArrayHelper::getValue($result, 'numbertrip');
 
@@ -28,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'direction' => $direction,
         'project'=>$project,
         'prikaz'=> $prikaz,
+        'dat1' => $dat1,
          $model->numbertrip = $value+1,
         $model->daily = 240,
         $model->cena_pr = 0.00,

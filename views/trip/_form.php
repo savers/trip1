@@ -15,7 +15,11 @@ use app\models\Client;
 
 <div class="trip-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin();
+
+   // var_dump($dat1);
+
+    ?>
 
     <?= $form->field($model, 'iduserdata')->dropDownList(
         ArrayHelper::map($userdata, 'id', 'pib'),
@@ -199,6 +203,7 @@ use app\models\Client;
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
+
 
     <?php ActiveForm::end(); ?>
 

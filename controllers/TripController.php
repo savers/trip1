@@ -82,6 +82,14 @@ class TripController extends BehaviorsController
     {
         $model = new Trip();
 
+        $dat = new \DateTime();
+        $sat = $dat->format('Y');
+        $sat1 = $sat.'-01-01';
+        $sat2 = $sat.'-12-31';
+        $dat1 = \DateTime::createFromFormat('Y-m-d',$sat1)->format('U');
+        $dat2 = \DateTime::createFromFormat('Y-m-d',$sat2)->format('U');
+
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -90,9 +98,9 @@ class TripController extends BehaviorsController
                 'userdata'=> Userdata::find()->where(['status' => 1])->orderBy('pib')->all(),
                 'direction'=> Direction::find()->asArray()->orderBy('sity')->all(),
                 'project'=> Project::find()->asArray()->orderBy('name_project')->all(),
-                'prikaz'=> Prikaz::find()->asArray()->orderBy('nomberprikaz DESC')->all(),
-
-
+               // 'prikaz'=> Prikaz::find()->asArray()->orderBy('nomberprikaz DESC')->all(),
+                'prikaz'=> Prikaz::find()->where(['between','dateprikaz',$dat1,$dat2])->asArray()->orderBy('nomberprikaz DESC')->all(),
+                'dat1' => $dat1,
 
             ]);
         }
@@ -111,6 +119,9 @@ class TripController extends BehaviorsController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+
+
+
 
 
         if ($model->idusers == Yii::$app->user->id) {

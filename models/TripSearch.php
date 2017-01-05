@@ -20,7 +20,7 @@ class TripSearch extends Trip
         return [
             [['id','date_otpr', 'iduserdata', 'idclient', 'idproject', 'idusers', 'date_kup_bilet', 'date_pr', 'date_otpr1', 'date_pr1', 'status_trip', 'numbertrip', 'budzhet', 'date_zvit', 'date_zvit_us', 'key', 'zhurnal', 'created_at', 'updated_at'], 'integer'],
             [['target', 'vidtransport', 'note','depart'], 'safe'],
-            [['daily', 'cena_pr', 'event', 'taxi', 'predstav','stoimost_pr'], 'number'],
+            [['daily', 'cena_pr', 'event', 'taxi', 'predstav','stoimost_pr','dt'], 'number'],
 
         ];
     }
@@ -48,7 +48,12 @@ class TripSearch extends Trip
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['numbertrip'=>SORT_DESC]]
+            'sort'=> ['defaultOrder' => [
+                'dt'=>SORT_DESC,
+                'numbertrip'=>SORT_DESC,
+
+
+            ]]
         ]);
 
         $this->load($params);
